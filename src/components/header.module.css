@@ -1,0 +1,11 @@
+.header {
+  @apply fixed z-10 top-0 w-full h-[70px] p-4 bg-white flex flex-row items-center;
+}
+
+.logo {
+  @apply w-44;
+}
+
+.menu {
+  @apply ml-auto bg-pink-200 rounded-md p-2;
+}
