@@ -8,94 +8,123 @@
  */
 
 /* ==========================================================================
-   Base styles: opinionated defaults
+   Custom CSS reset
    ========================================================================== */
 
-html {
-  color: #222;
-  font-size: 1em;
-  line-height: 1.4;
-}
-
 /*
- * Remove text-shadow in selection highlight:
- * https://twitter.com/miketaylr/status/12228805301
- *
- * Customize the background color to match your design.
+ * Josh's Custom CSS Reset
+ * https://www.joshwcomeau.com/css/custom-css-reset/
  */
 
-::-moz-selection {
-  background: #b3d4fc;
-  text-shadow: none;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-::selection {
-  background: #b3d4fc;
-  text-shadow: none;
-}
-
-/*
- * A better looking default horizontal rule
- */
-
-hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0;
-}
-
-/*
- * Remove the gap between audio, canvas, iframes,
- * images, videos and the bottom of their containers:
- * https://github.com/h5bp/html5-boilerplate/issues/440
- */
-
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
-  vertical-align: middle;
-}
-
-/*
- * Remove default fieldset styles.
- */
-
-fieldset {
-  border: 0;
+* {
   margin: 0;
-  padding: 0;
 }
 
-/*
- * Allow only vertical resizing of textareas.
- */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
 
-textarea {
-  resize: vertical;
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
 }
 
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
 
+body {
+  font-family: sans-serif;
+}
+
+header {
+  background-color: white;
+}
+
+header .logo {
+  margin: 0 auto;
+}
+
+main {
+  background-color: aquamarine;
+}
+
+/*
+ * https://baseline.is/tools/type-scale-generator/ 1.250 - Major Third
+ */
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  line-height: 1.15;
+}
+
+h1 {
+  font-size: 3.05em;
+}
+
+h2 {
+  font-size: 2.44em;
+}
+
+h3 {
+  font-size: 1.95em;
+}
+
+h4 {
+  font-size: 1.56em;
+}
+
+h5 {
+  font-size: 1.25em;
+}
+
+p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.text-caption {
+  font-size: 0.8em;
+}
+
+small {
+  font-size: 0.64rem;
+}
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
-
-/*
- * Hide visually and from screen readers
- */
-
-.hidden,
-[hidden] {
-  display: none !important;
-}
 
 /*
  * Hide only visually, but have it available for screen readers:
@@ -120,62 +149,66 @@ textarea {
 }
 
 /*
- * Extends the .visually-hidden class to allow the element
- * to be focusable when navigated to via the keyboard:
- * https://www.drupal.org/node/897638
+ * Paddings
  */
 
-.visually-hidden.focusable:active,
-.visually-hidden.focusable:focus {
-  clip: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  position: static;
-  white-space: inherit;
-  width: auto;
+.px-1 {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.px-2 {
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+.py-1 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.py-2 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 /*
- * Hide visually and from screen readers, but maintain layout
+ * Flex
  */
 
-.invisible {
-  visibility: hidden;
+.flex-column {
+  display: flex;
+  flex-direction: column;
 }
 
-/*
- * Clearfix: contain floats
- *
- * The use of `table` rather than `block` is only necessary if using
- * `::before` to contain the top-margins of child elements.
- */
-
-.clearfix::before,
-.clearfix::after {
-  content: "";
-  display: table;
+.flex-row {
+  display: flex;
+  flex-direction: row;
 }
 
-.clearfix::after {
-  clear: both;
+.justify-between {
+  justify-content: space-between;
 }
 
 /* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
+   Media Queries for Responsive Design.
    These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
 
 @media only screen and (min-width: 35em) {
   /* Style adjustments for viewports that meet the condition */
-}
+  .sm-flex-column {
+    flex-direction: column;
+  }
 
-@media print,
-  (-webkit-min-device-pixel-ratio: 1.25),
-  (min-resolution: 1.25dppx),
-  (min-resolution: 120dpi) {
-  /* Style adjustments for high resolution devices */
+  .sm-flex-row {
+    flex-direction: row;
+  }
+
+  .sm-flex {
+    flex: 18rem;
+  }
 }
 
 /* ==========================================================================
@@ -244,4 +277,3 @@ textarea {
     page-break-after: avoid;
   }
 }
-
