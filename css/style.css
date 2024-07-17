@@ -61,6 +61,13 @@ h6 {
    Author's custom styles
    ========================================================================== */
 
+:root {
+  --color-pink: #f8c8df;
+  --color-green: #6bc0a7;
+  --color-yellow: #fbd85f;
+  --color-blue: #8dcfd6;
+}
+
 body {
   font-family: sans-serif;
 }
@@ -71,10 +78,6 @@ header {
 
 header .logo {
   margin: 0 auto;
-}
-
-main {
-  background-color: aquamarine;
 }
 
 /*
@@ -149,6 +152,23 @@ small {
 }
 
 /*
+ * Max and min widths
+ */
+
+.max-w {
+  max-width: 60rem;
+}
+
+/*
+ * Margins
+ */
+
+.mx-auto {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/*
  * Paddings
  */
 
@@ -188,6 +208,61 @@ small {
 
 .justify-between {
   justify-content: space-between;
+}
+
+/*
+ * Grid
+ */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.span {
+  display: grid;
+  place-items: center;
+  text-align: center;
+
+  /* @TODO: delete */
+  height: 300px;
+  border: 5px dotted beige;
+}
+
+.span-1 {
+  grid-column: 3 / span 1;
+}
+
+.span-2 {
+  grid-column: 2 / span 2;
+}
+
+.span-3 {
+  grid-column: 1 / span 3;
+}
+
+.span-6 {
+  grid-column: 1 / span 6;
+}
+
+/*
+ * Background colors
+ */
+
+.bg-1 {
+  background-color: var(--color-pink);
+}
+
+.bg-2 {
+  background-color: var(--color-green);
+}
+
+.bg-3 {
+  background-color: var(--color-yellow);
+}
+
+.bg-4 {
+  background-color: var(--color-blue);
 }
 
 /* ==========================================================================
