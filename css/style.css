@@ -62,22 +62,13 @@ h6 {
    ========================================================================== */
 
 :root {
-  --color-pink: #f8c8df;
   --color-green: #6bc0a7;
-  --color-yellow: #fbd85f;
-  --color-blue: #8dcfd6;
-}
+  --color-grey: #b3b2c0;
+  --color-yellow: #fdeaaf;
+  --color-orange: #f9b56b;
+  --color-red: #d35847;
 
-body {
-  font-family: sans-serif;
-}
-
-header {
-  background-color: white;
-}
-
-header .logo {
-  margin: 0 auto;
+  --size-logo: 12rem;
 }
 
 /*
@@ -92,29 +83,18 @@ h5 {
   line-height: 1.15;
 }
 
-h1 {
-  font-size: 3.05em;
-}
-
 h2 {
-  font-size: 2.44em;
+  font-size: 1.56em;
+  margin-bottom: 0.85rem;
 }
 
 h3 {
-  font-size: 1.95em;
-}
-
-h4 {
-  font-size: 1.56em;
-}
-
-h5 {
   font-size: 1.25em;
 }
 
 p {
   font-size: 1rem;
-  margin-bottom: 1.5rem;
+  /* margin-bottom: 1.5rem; */
 }
 
 .text-caption {
@@ -123,6 +103,57 @@ p {
 
 small {
   font-size: 0.64rem;
+}
+
+a {
+  color: var(--color-red);
+}
+
+a:visited {
+  color: var(--color-red);
+}
+
+a:hover {
+  color: var(--color-green);
+}
+
+body {
+  font-family: sans-serif;
+}
+
+header .logo {
+  margin: 0 auto;
+}
+
+.logo {
+  display: block;
+  max-width: var(--size-logo);
+}
+
+footer h3 {
+  font-size: 1em;
+}
+
+footer ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+footer p {
+  font-size: 0.875rem;
+}
+
+footer ul li {
+  font-size: 0.875rem;
+}
+
+.cta {
+  display: flex;
+  position: fixed;
+  z-index: 1;
+  bottom: 1rem;
+  right: 2rem;
+  width: 6rem;
 }
 
 /* ==========================================================================
@@ -156,7 +187,7 @@ small {
  */
 
 .max-w {
-  max-width: 60rem;
+  max-width: 60rem; /* 960px */
 }
 
 /*
@@ -168,18 +199,28 @@ small {
   margin-left: auto;
 }
 
+.m-05 {
+  margin: 0.5rem;
+}
+
+.mb-1 {
+  margin-bottom: 1rem; /* 16px */
+}
+
+.mb-8 {
+  margin-bottom: 8rem; /* 128px */
+}
+
 /*
  * Paddings
  */
 
-.px-1 {
-  padding-right: 1rem;
-  padding-left: 1rem;
+.p-2 {
+  padding: 2rem;
 }
 
-.px-2 {
-  padding-right: 2rem;
-  padding-left: 2rem;
+.p-3 {
+  padding: 3rem;
 }
 
 .py-1 {
@@ -192,18 +233,47 @@ small {
   padding-bottom: 2rem;
 }
 
+.py-3 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.px-1 {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.px-2 {
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+.pl-3 {
+  padding-left: 3rem;
+}
+
 /*
  * Flex
  */
 
-.flex-column {
+.flex {
   display: flex;
-  flex-direction: column;
 }
 
-.flex-row {
-  display: flex;
-  flex-direction: row;
+.flex-col-reverse {
+  flex-direction: column-reverse;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.flex-box {
+  flex: 1 1 20rem; /* 320px */
+  align-content: center;
+  border-radius: 1.5rem;
 }
 
 .justify-between {
@@ -216,32 +286,19 @@ small {
 
 .grid {
   display: grid;
+}
+
+.grid-repeat-6-col {
   grid-template-columns: repeat(6, 1fr);
+}
+
+.gap-1 {
+  gap: 1rem;
 }
 
 .span {
   display: grid;
-  place-items: center;
-  text-align: center;
-
-  /* @TODO: delete */
-  height: 300px;
-  border: 5px dotted beige;
-}
-
-.span-1 {
-  grid-column: 3 / span 1;
-}
-
-.span-2 {
-  grid-column: 2 / span 2;
-}
-
-.span-3 {
-  grid-column: 1 / span 3;
-}
-
-.span-6 {
+  min-height: 25rem; /* 400px */
   grid-column: 1 / span 6;
 }
 
@@ -250,11 +307,11 @@ small {
  */
 
 .bg-1 {
-  background-color: var(--color-pink);
+  background-color: var(--color-green);
 }
 
 .bg-2 {
-  background-color: var(--color-green);
+  background-color: var(--color-grey);
 }
 
 .bg-3 {
@@ -262,7 +319,11 @@ small {
 }
 
 .bg-4 {
-  background-color: var(--color-blue);
+  background-color: var(--color-orange);
+}
+
+.bg-5 {
+  background-color: var(--color-red);
 }
 
 /* ==========================================================================
@@ -272,17 +333,51 @@ small {
    ========================================================================== */
 
 @media only screen and (min-width: 35em) {
+  /* 560px */
   /* Style adjustments for viewports that meet the condition */
-  .sm-flex-column {
-    flex-direction: column;
+  h2 {
+    font-size: 1.95em;
   }
 
-  .sm-flex-row {
-    flex-direction: row;
+  h3 {
+    font-size: 1.56em;
   }
 
-  .sm-flex {
-    flex: 18rem;
+  .sm-mt-2 {
+    margin-top: 2rem; /* 32px */
+  }
+
+  .sm-flex-dir-unset {
+    flex-direction: unset;
+  }
+
+  .sm-grid-3-col {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .sm-span-4-start-2 {
+    grid-column: 2 / span 4;
+  }
+}
+
+@media only screen and (min-width: 64em) {
+  /* 1024px */
+  /* Style adjustments for viewports that meet the condition */
+  h1 {
+    font-size: 3.05em;
+  }
+
+  h2 {
+    font-size: 2.44em;
+  }
+
+  .md-p-3 {
+    padding: 3rem;
+  }
+
+  .md-px-3 {
+    padding-right: 3rem;
+    padding-left: 3rem;
   }
 }
 
