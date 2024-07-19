@@ -20,6 +20,7 @@ module.exports = merge(common, {
         { from: "404.html", to: "404.html" },
         { from: "datenschutz.html", to: "datenschutz.html" },
         { from: "impressum.html", to: "impressum.html" },
+        { from: "kontakt.html", to: "kontakt.html" },
       ],
     }),
   ],
