@@ -8,94 +8,157 @@
  */
 
 /* ==========================================================================
-   Base styles: opinionated defaults
+   Custom CSS reset
    ========================================================================== */
 
-html {
-  color: #222;
-  font-size: 1em;
-  line-height: 1.4;
-}
-
 /*
- * Remove text-shadow in selection highlight:
- * https://twitter.com/miketaylr/status/12228805301
- *
- * Customize the background color to match your design.
+ * Josh's Custom CSS Reset
+ * https://www.joshwcomeau.com/css/custom-css-reset/
  */
 
-::-moz-selection {
-  background: #b3d4fc;
-  text-shadow: none;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-::selection {
-  background: #b3d4fc;
-  text-shadow: none;
-}
-
-/*
- * A better looking default horizontal rule
- */
-
-hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0;
-}
-
-/*
- * Remove the gap between audio, canvas, iframes,
- * images, videos and the bottom of their containers:
- * https://github.com/h5bp/html5-boilerplate/issues/440
- */
-
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
-  vertical-align: middle;
-}
-
-/*
- * Remove default fieldset styles.
- */
-
-fieldset {
-  border: 0;
+* {
   margin: 0;
-  padding: 0;
 }
 
-/*
- * Allow only vertical resizing of textareas.
- */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
 
-textarea {
-  resize: vertical;
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
 }
 
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
 
+:root {
+  --color-green: #6bc0a7;
+  --color-grey: #b3b2c0;
+  --color-yellow: #fdeaaf;
+  --color-orange: #f9b56b;
+  --color-red: #d35847;
+
+  --size-logo: 12rem;
+}
+
+/*
+ * https://baseline.is/tools/type-scale-generator/ 1.250 - Major Third
+ */
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  line-height: 1.15;
+}
+
+h2 {
+  font-size: 1.56em;
+  margin-bottom: 0.85rem;
+}
+
+h3 {
+  font-size: 1.25em;
+}
+
+p {
+  font-size: 1rem;
+  /* margin-bottom: 1.5rem; */
+}
+
+.text-caption {
+  font-size: 0.8em;
+}
+
+small {
+  font-size: 0.64rem;
+}
+
+a {
+  color: var(--color-red);
+}
+
+a:visited {
+  color: var(--color-red);
+}
+
+a:hover {
+  color: var(--color-green);
+}
+
+body {
+  font-family: sans-serif;
+}
+
+header .logo {
+  margin: 0 auto;
+}
+
+.logo {
+  display: block;
+  max-width: var(--size-logo);
+}
+
+footer h3 {
+  font-size: 1em;
+}
+
+footer ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+footer p {
+  font-size: 0.875rem;
+}
+
+footer ul li {
+  font-size: 0.875rem;
+}
+
+.cta {
+  display: flex;
+  position: fixed;
+  z-index: 1;
+  bottom: 1rem;
+  right: 2rem;
+  width: 6rem;
+}
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
-
-/*
- * Hide visually and from screen readers
- */
-
-.hidden,
-[hidden] {
-  display: none !important;
-}
 
 /*
  * Hide only visually, but have it available for screen readers:
@@ -120,62 +183,202 @@ textarea {
 }
 
 /*
- * Extends the .visually-hidden class to allow the element
- * to be focusable when navigated to via the keyboard:
- * https://www.drupal.org/node/897638
+ * Max and min widths
  */
 
-.visually-hidden.focusable:active,
-.visually-hidden.focusable:focus {
-  clip: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  position: static;
-  white-space: inherit;
-  width: auto;
+.max-w {
+  max-width: 60rem; /* 960px */
 }
 
 /*
- * Hide visually and from screen readers, but maintain layout
+ * Margins
  */
 
-.invisible {
-  visibility: hidden;
+.mx-auto {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.m-05 {
+  margin: 0.5rem;
+}
+
+.mb-1 {
+  margin-bottom: 1rem; /* 16px */
+}
+
+.mb-8 {
+  margin-bottom: 8rem; /* 128px */
 }
 
 /*
- * Clearfix: contain floats
- *
- * The use of `table` rather than `block` is only necessary if using
- * `::before` to contain the top-margins of child elements.
+ * Paddings
  */
 
-.clearfix::before,
-.clearfix::after {
-  content: "";
-  display: table;
+.p-2 {
+  padding: 2rem;
 }
 
-.clearfix::after {
-  clear: both;
+.p-3 {
+  padding: 3rem;
+}
+
+.py-1 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.py-2 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.py-3 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.px-1 {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.px-2 {
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+.pl-3 {
+  padding-left: 3rem;
+}
+
+/*
+ * Flex
+ */
+
+.flex {
+  display: flex;
+}
+
+.flex-col-reverse {
+  flex-direction: column-reverse;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.flex-box {
+  flex: 1 1 20rem; /* 320px */
+  align-content: center;
+  border-radius: 1.5rem;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+/*
+ * Grid
+ */
+
+.grid {
+  display: grid;
+}
+
+.grid-repeat-6-col {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.gap-1 {
+  gap: 1rem;
+}
+
+.span {
+  display: grid;
+  min-height: 25rem; /* 400px */
+  grid-column: 1 / span 6;
+}
+
+/*
+ * Background colors
+ */
+
+.bg-1 {
+  background-color: var(--color-green);
+}
+
+.bg-2 {
+  background-color: var(--color-grey);
+}
+
+.bg-3 {
+  background-color: var(--color-yellow);
+}
+
+.bg-4 {
+  background-color: var(--color-orange);
+}
+
+.bg-5 {
+  background-color: var(--color-red);
 }
 
 /* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
+   Media Queries for Responsive Design.
    These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
 
 @media only screen and (min-width: 35em) {
+  /* 560px */
   /* Style adjustments for viewports that meet the condition */
+  h2 {
+    font-size: 1.95em;
+  }
+
+  h3 {
+    font-size: 1.56em;
+  }
+
+  .sm-mt-2 {
+    margin-top: 2rem; /* 32px */
+  }
+
+  .sm-flex-dir-unset {
+    flex-direction: unset;
+  }
+
+  .sm-grid-3-col {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .sm-span-4-start-2 {
+    grid-column: 2 / span 4;
+  }
 }
 
-@media print,
-  (-webkit-min-device-pixel-ratio: 1.25),
-  (min-resolution: 1.25dppx),
-  (min-resolution: 120dpi) {
-  /* Style adjustments for high resolution devices */
+@media only screen and (min-width: 64em) {
+  /* 1024px */
+  /* Style adjustments for viewports that meet the condition */
+  h1 {
+    font-size: 3.05em;
+  }
+
+  h2 {
+    font-size: 2.44em;
+  }
+
+  .md-p-3 {
+    padding: 3rem;
+  }
+
+  .md-px-3 {
+    padding-right: 3rem;
+    padding-left: 3rem;
+  }
 }
 
 /* ==========================================================================
@@ -244,4 +447,3 @@ textarea {
     page-break-after: avoid;
   }
 }
-
