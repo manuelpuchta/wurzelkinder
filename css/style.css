@@ -68,7 +68,7 @@ h6 {
   --color-orange: #f9b56b80;
   --color-red: #d3584780;
 
-  --color-link-green: #6bc0a7;
+  --color-link-dark: #6c2d24;
   --color-link-red: #d35847;
 
   --size-logo: 12rem;
@@ -117,7 +117,7 @@ a:visited {
 }
 
 a:hover {
-  color: var(--color-link-green);
+  color: var(--color-link-dark);
 }
 
 body {
