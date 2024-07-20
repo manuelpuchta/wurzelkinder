@@ -62,11 +62,14 @@ h6 {
    ========================================================================== */
 
 :root {
-  --color-green: #6bc0a7;
-  --color-grey: #b3b2c0;
-  --color-yellow: #fdeaaf;
-  --color-orange: #f9b56b;
-  --color-red: #d35847;
+  --color-green: #6bc0a780;
+  --color-grey: #b3b2c080;
+  --color-yellow: #fdeaaf80;
+  --color-orange: #f9b56b80;
+  --color-red: #d3584780;
+
+  --color-link-green: #6bc0a7;
+  --color-link-red: #d35847;
 
   --size-logo: 12rem;
 }
@@ -106,15 +109,15 @@ small {
 }
 
 a {
-  color: var(--color-red);
+  color: var(--color-link-red);
 }
 
 a:visited {
-  color: var(--color-red);
+  color: var(--color-link-red);
 }
 
 a:hover {
-  color: var(--color-green);
+  color: var(--color-link-green);
 }
 
 body {
@@ -151,9 +154,9 @@ footer ul li {
   display: flex;
   position: fixed;
   z-index: 1;
-  bottom: 1rem;
-  right: 2rem;
   width: 6rem;
+  bottom: 1rem;
+  left: calc(50% - 3rem);
 }
 
 /* ==========================================================================
@@ -183,11 +186,52 @@ footer ul li {
 }
 
 /*
- * Max and min widths
+ * Position
+ */
+
+.relative {
+  position: relative;
+}
+
+/*
+ * Overflow
+ */
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+/*
+ * Image
+ */
+
+.img-cover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+}
+
+/*
+ * Filter
+ */
+
+.filter-image {
+  filter: grayscale(50%) sepia(100%) opacity(0.75);
+}
+
+/*
+ * Max and min widths/heights
  */
 
 .max-w {
   max-width: 60rem; /* 960px */
+}
+
+.min-h-15 {
+  min-height: 15rem; /* 240px */
 }
 
 /*
