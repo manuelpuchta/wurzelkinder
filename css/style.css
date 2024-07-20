@@ -186,52 +186,11 @@ footer ul li {
 }
 
 /*
- * Position
- */
-
-.relative {
-  position: relative;
-}
-
-/*
- * Overflow
- */
-
-.overflow-hidden {
-  overflow: hidden;
-}
-
-/*
- * Image
- */
-
-.img-cover {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  top: 0;
-  left: 0;
-}
-
-/*
- * Filter
- */
-
-.filter-image {
-  filter: grayscale(50%) sepia(100%) opacity(0.75);
-}
-
-/*
  * Max and min widths/heights
  */
 
 .max-w {
   max-width: 60rem; /* 960px */
-}
-
-.min-h-15 {
-  min-height: 15rem; /* 240px */
 }
 
 /*
