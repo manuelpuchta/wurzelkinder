@@ -127,6 +127,10 @@ a.active {
   cursor: default;
 }
 
+ul {
+  padding-left: 1rem;
+}
+
 body {
   font-family: sans-serif;
 }
