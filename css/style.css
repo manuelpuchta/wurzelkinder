@@ -144,21 +144,32 @@ header .logo {
   max-width: var(--size-logo);
 }
 
-footer h3 {
-  font-size: 1em; /* 16px */
+section {
+  word-break: break-word;
 }
 
-footer ul {
-  padding-left: 0;
-  list-style: none;
+footer h3 {
+  font-size: 1em; /* 16px */
 }
 
 footer p {
   font-size: 0.875rem; /* 14px */
 }
 
+footer ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: -0.75rem; /* -12px */
+}
+
 footer ul li {
+  display: inline-flex;
   font-size: 0.875rem; /* 14px */
+  margin-right: 1rem; /* 16px */
+}
+
+footer ul li a {
+  padding: 0.5rem 0; /* 8px */
 }
 
 .cta {
@@ -202,6 +213,10 @@ footer ul li {
 
 .max-w {
   max-width: 60rem; /* 960px */
+}
+
+.max-w-12 {
+  max-width: 12rem; /* 192px */
 }
 
 .min-h-span {
