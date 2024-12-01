@@ -71,7 +71,9 @@ h6 {
   --color-link-dark: #6c2d24;
   --color-link-red: #d35847;
 
-  --size-logo: 12rem;
+  --size-logo: 14rem; /* 224px */
+  --size-logo-sm: 20rem; /* 320px */
+  --size-logo-md: 25rem; /* 400px */
 }
 
 /*
@@ -96,8 +98,7 @@ h3 {
 }
 
 p {
-  font-size: 1rem;
-  /* margin-bottom: 1.5rem; */
+  font-size: 1em;
 }
 
 .text-caption {
@@ -120,6 +121,12 @@ a:hover {
   color: var(--color-link-dark);
 }
 
+a.active {
+  color: var(--color-link-dark);
+  text-decoration: none;
+  cursor: default;
+}
+
 body {
   font-family: sans-serif;
 }
@@ -134,7 +141,7 @@ header .logo {
 }
 
 footer h3 {
-  font-size: 1em;
+  font-size: 1em; /* 16px */
 }
 
 footer ul {
@@ -143,20 +150,20 @@ footer ul {
 }
 
 footer p {
-  font-size: 0.875rem;
+  font-size: 0.875rem; /* 14px */
 }
 
 footer ul li {
-  font-size: 0.875rem;
+  font-size: 0.875rem; /* 14px */
 }
 
 .cta {
   display: flex;
   position: fixed;
   z-index: 1;
-  width: 6rem;
-  bottom: 1rem;
-  left: calc(50% - 3rem);
+  width: 6rem; /* 96px */
+  bottom: 1rem; /* 16px */
+  left: calc(50% - 3rem); /* - 48px */
 }
 
 /* ==========================================================================
@@ -193,6 +200,10 @@ footer ul li {
   max-width: 60rem; /* 960px */
 }
 
+.min-h-span {
+  min-height: 25rem; /* 400px */
+}
+
 /*
  * Margins
  */
@@ -202,16 +213,20 @@ footer ul li {
   margin-left: auto;
 }
 
-.m-05 {
-  margin: 0.5rem;
-}
-
 .mb-1 {
   margin-bottom: 1rem; /* 16px */
 }
 
-.mb-8 {
-  margin-bottom: 8rem; /* 128px */
+.m-2 {
+  margin: 2rem; /* 32px */
+}
+
+.mt-4 {
+  margin-top: 4rem; /* 64px */
+}
+
+.mb-12 {
+  margin-bottom: 12rem; /* 192px */
 }
 
 /*
@@ -219,40 +234,28 @@ footer ul li {
  */
 
 .p-2 {
-  padding: 2rem;
+  padding: 2rem; /* 32px */
 }
 
 .p-3 {
-  padding: 3rem;
+  padding: 3rem; /* 48px */
 }
 
-.py-1 {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-
-.py-2 {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-}
-
-.py-3 {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
-
-.px-1 {
-  padding-right: 1rem;
-  padding-left: 1rem;
+.pb-2 {
+  padding-bottom: 2rem; /* 32px */
 }
 
 .px-2 {
-  padding-right: 2rem;
-  padding-left: 2rem;
+  padding-right: 2rem; /* 32px */
+  padding-left: 2rem; /* 32px */
 }
 
 .pl-3 {
-  padding-left: 3rem;
+  padding-left: 3rem; /* 48px */
+}
+
+.pt-4 {
+  padding-top: 4rem; /* 64px */
 }
 
 /*
@@ -270,13 +273,13 @@ footer ul li {
 .flex-wrap {
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 2rem; /* 32px */
 }
 
 .flex-box {
   flex: 1 1 20rem; /* 320px */
   align-content: center;
-  border-radius: 1.5rem;
+  border-radius: 1.5rem; /* 24px */
 }
 
 .justify-between {
@@ -296,12 +299,11 @@ footer ul li {
 }
 
 .gap-1 {
-  gap: 1rem;
+  gap: 1rem; /* 16px */
 }
 
 .span {
   display: grid;
-  min-height: 25rem; /* 400px */
   grid-column: 1 / span 6;
 }
 
@@ -329,6 +331,13 @@ footer ul li {
   background-color: var(--color-red);
 }
 
+.bg-rainbow {
+  background-image: url("/img/illu-rainbow.webp");
+  background-repeat: no-repeat;
+  background-size: 8rem; /* 128px */
+  background-position: 98% 100%;
+}
+
 /* ==========================================================================
    Media Queries for Responsive Design.
    These examples override the primary ('mobile first') styles.
@@ -346,10 +355,6 @@ footer ul li {
     font-size: 1.56em;
   }
 
-  .sm-mt-2 {
-    margin-top: 2rem; /* 32px */
-  }
-
   .sm-flex-dir-unset {
     flex-direction: unset;
   }
@@ -360,6 +365,10 @@ footer ul li {
 
   .sm-span-4-start-2 {
     grid-column: 2 / span 4;
+  }
+
+  .logo {
+    max-width: var(--size-logo-sm);
   }
 }
 
@@ -375,12 +384,16 @@ footer ul li {
   }
 
   .md-p-3 {
-    padding: 3rem;
+    padding: 3rem; /* 48px */
   }
 
   .md-px-3 {
-    padding-right: 3rem;
-    padding-left: 3rem;
+    padding-right: 3rem; /* 48px */
+    padding-left: 3rem; /* 48px */
+  }
+
+  .logo {
+    max-width: var(--size-logo-md);
   }
 }
 
