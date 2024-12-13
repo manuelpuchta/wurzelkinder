@@ -95,10 +95,11 @@ h2 {
 
 h3 {
   font-size: 1.25em;
+  margin-bottom: 0.5rem;
 }
 
 p {
-  font-size: 1em;
+  font-size: 1.125em; /* 18px */
 }
 
 .text-caption {
@@ -161,24 +162,35 @@ section ul li {
   margin: 0.5rem 0;
 }
 
+footer .logo {
+  text-align: center;
+  margin: 0 auto 1.5rem; /* 24px */
+}
+
 footer h3 {
   font-size: 1em; /* 16px */
 }
 
 footer p {
-  font-size: 0.875rem; /* 14px */
+  font-size: 1rem; /* 16px */
 }
 
 footer ul {
+  display: flex;
+  justify-content: center;
   list-style: none;
   padding-left: 0;
-  margin-top: -0.75rem; /* -12px */
+  margin-top: 1rem; /* 16px */
 }
 
 footer ul li {
   display: inline-flex;
-  font-size: 0.875rem; /* 14px */
-  margin-right: 1rem; /* 16px */
+  font-size: 1rem; /* 16px */
+  margin-right: 1.5rem; /* 16px */
+}
+
+footer ul li:last-child {
+  margin-right: 0;
 }
 
 footer ul li a {
@@ -243,10 +255,6 @@ footer ul li a {
 .mx-auto {
   margin-right: auto;
   margin-left: auto;
-}
-
-.mb-1 {
-  margin-bottom: 1rem; /* 16px */
 }
 
 .m-2 {
@@ -330,8 +338,8 @@ footer ul li a {
   grid-template-columns: repeat(6, 1fr);
 }
 
-.gap-1 {
-  gap: 1rem; /* 16px */
+.gap-2 {
+  gap: 2rem; /* 32px */
 }
 
 .span {
@@ -387,12 +395,16 @@ footer ul li a {
     font-size: 1.56em;
   }
 
+  .sm-text-right {
+    text-align: right;
+  }
+
   .sm-flex-dir-unset {
     flex-direction: unset;
   }
 
-  .sm-grid-3-col {
-    grid-template-columns: 1fr 1fr 1fr;
+  .sm-grid-2-items {
+    grid-template-columns: 1fr 1fr;
   }
 
   .sm-span-4-start-2 {
