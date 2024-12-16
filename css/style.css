@@ -338,8 +338,8 @@ footer ul li a {
   grid-template-columns: repeat(6, 1fr);
 }
 
-.gap-2 {
-  gap: 2rem; /* 32px */
+.gap-1 {
+  gap: 1rem; /* 16px */
 }
 
 .span {
