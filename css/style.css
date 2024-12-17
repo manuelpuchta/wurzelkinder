@@ -68,8 +68,8 @@ h6 {
   --color-orange: #f9b56b80;
   --color-red: #d3584780;
 
-  --color-link-dark: #6c2d24;
-  --color-link-red: #d35847;
+  --color-link-hover: #6c2d24;
+  --color-link: #000;
 
   --size-logo: 14rem; /* 224px */
   --size-logo-sm: 20rem; /* 320px */
@@ -111,25 +111,21 @@ small {
 }
 
 a {
-  color: var(--color-link-red);
+  color: var(--color-link);
 }
 
 a:visited {
-  color: var(--color-link-red);
+  color: var(--color-link);
 }
 
 a:hover {
-  color: var(--color-link-dark);
+  color: var(--color-link-hover);
 }
 
 a.active {
-  color: var(--color-link-dark);
+  color: var(--color-link-hover);
   text-decoration: none;
   cursor: default;
-}
-
-a.inherit {
-  color: inherit;
 }
 
 a.thumb {
